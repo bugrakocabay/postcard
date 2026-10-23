@@ -1,0 +1,45 @@
+[package]
+name = "postcard"
+version = "0.1.0"
+description = "Lightweight local API client"
+authors = []
+license = ""
+repository = ""
+edition = "2024"
+rust-version = "1.90"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "postcard_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.7.4", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "2.12.5", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-clipboard-manager = "2"
+tokio = { version = "1.54.1", features = ["full"] }
+reqwest_cookie_store = "0.10.0"
+cookie_store = "0.22.1"
+rquickjs = "0.14.0"
+uuid = { version = "1.28.0", features = ["v4"] }
+chrono = "0.4.45"
+base64 = "0.23.1"
+thiserror = "2.0.21"
+url = "2.5.8"
+rand = "0.10.3"
+which = "8.0.6"
+tokio-util = "0.7.20"
+bytes = "1.12.1"
+futures-util = "0.3.34"
+reqwest = { version = "0.13.5", default-features = false, features = ["rustls-no-provider", "gzip", "brotli", "deflate", "multipart", "cookies", "stream", "http2", "charset", "form", "query", "system-proxy"] }
+rustls = { version = "0.23.46", default-features = false, features = ["ring", "std", "tls12"] }
+
+[dev-dependencies]
+axum = "0.8.9"
+tempfile = "3.27.0"
