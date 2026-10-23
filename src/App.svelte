@@ -21,6 +21,7 @@
   import { tabs } from './lib/state/tabs.svelte'
   import { ui } from './lib/state/ui.svelte'
   import { saveActive } from './lib/actions.svelte'
+  import logo from './assets/logo.png'
 
   let main: HTMLDivElement | undefined = $state()
   let startSidebar = 0
@@ -108,6 +109,7 @@
           {/key}
         {:else}
           <div class="none">
+            <img src={logo} alt="Postcard" class="logo" />
             <p class="muted">No open tabs.</p>
             <button class="btn primary" onclick={() => tabs.newTab()}>New request</button>
           </div>
@@ -175,6 +177,7 @@
   .res { flex: 1; min-height: 100px; overflow: hidden; }
   .console { flex-shrink: 0; min-height: 0; }
   .none { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+  .logo { width: 96px; margin-bottom: 6px; user-select: none; -webkit-user-drag: none; }
   .statusbar {
     display: flex; align-items: center; gap: 2px; height: 26px; padding: 0 6px; flex-shrink: 0;
     background: var(--bg-2); border-top: 1px solid var(--border); font-size: 12px;

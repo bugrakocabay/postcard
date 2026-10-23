@@ -8,6 +8,7 @@
   import { api, errorMessage } from '../api'
   import { formatBytes, formatMs, statusClass } from '../util/format'
   import { formatJson } from '../util/jsonFormat'
+  import logo from '../../assets/logo.png'
 
   let { tab }: { tab: Tab } = $props()
 
@@ -183,6 +184,7 @@
     </div>
   {:else}
     <div class="center faint">
+      <img src={logo} alt="" class="logo" />
       <p>Send a request to see the response.</p>
       <p class="keys"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> to send</p>
     </div>
@@ -208,6 +210,7 @@
   td.k { color: #8fc1ff; white-space: nowrap; width: 1%; }
   .center { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
   .center p { margin: 0; }
+  .logo { width: 64px; margin-bottom: 8px; opacity: 0.85; user-select: none; -webkit-user-drag: none; }
   .keys { font-size: 12px; }
   kbd { background: var(--panel-2); border: 1px solid var(--border-strong); border-radius: 3px; padding: 1px 5px; font-family: var(--mono); font-size: 11px; }
   .image { flex: 1; overflow: auto; padding: 16px; display: flex; align-items: flex-start; justify-content: center;
